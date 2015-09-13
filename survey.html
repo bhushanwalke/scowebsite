@@ -1,0 +1,77 @@
+<html>
+<head>
+  <title>
+    CMPE280
+  </title>
+  <link rel="stylesheet" type="text/css" href="static/site.css">
+  <script src="http://fred-wang.github.io/mathjax.js/mpadded-min.js"></script>
+
+  <!-- <script type="text/javascript" src="static/site.js"></script> -->
+</head>
+<body>
+		<form class="pages" action="cosine.html">
+			<div class="header">
+				Survey
+			</div>
+      <div class="pagegrid grid-pad">
+        <div class="col-1-1">
+          <p>How did you like the center?</p>
+        </div>
+      </div>
+
+            <div class="grid grid-pad">
+          <div class="col-2-12">
+            <p>Comments: </p>
+          </div>
+          <div class="col-4-12">
+            <textarea rows="5" cols="100" autofocus="true">	</textarea>
+          </div>
+        </div>
+
+        <div class="grid grid-pad">
+        <div class="col-1-1">
+          <p>Select Location and Room:</p>
+        </div>
+      </div>
+      <div class="grid grid-pad">
+    <div class="col-4-12">
+      <p> City:
+      <input list="cities" name="city">
+      <datalist id="cities">
+        <option value="San Jose">
+        <option value="Los Angeles">
+        <option value="San Diego">
+        <option value="San Fransisco">
+        <option value="San Mateo">
+      </datalist>
+      </p>
+    </div>
+    <div class="col-4-12">
+        <p> Room:
+        <input list="rooms" name="room">
+        <datalist id="rooms">
+          <option value="Room 210">
+          <option value="Room 310">
+          <option value="Room 410">
+          <option value="Room 510">
+          <option value="Room 610">
+        </datalist>
+        </p>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="col-1-1">
+      <div class="col-3-12 grid-pad">
+      				<button  type="submit" class="btn">
+      					Sumbit & Next question
+      				</button>
+      			</div>
+    <div class="col-3-12 grid-pad">
+        <button  type="submit" class="btn" onclick="clearRadio();">
+          Cancel and Clear Selection
+        </button>
+    </div>
+  </div>
+      </body>
+    </html>
