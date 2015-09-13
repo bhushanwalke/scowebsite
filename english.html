@@ -1,0 +1,197 @@
+<html>
+<head>
+  <title>
+    CMPE280
+  </title>
+  <link rel="stylesheet" type="text/css" href="static/site.css">
+  <script src="http://fred-wang.github.io/mathjax.js/mpadded-min.js"></script>
+
+  <!-- <script type="text/javascript" src="static/site.js"></script> -->
+  <script type="text/javascript" >
+			function GetParam(name) {
+
+				var start = location.search.indexOf("?" + name + "=");
+				if (start < 0)
+					start = location.search.indexOf("&" + name + "=");
+				if (start < 0)
+					return '';
+				start += name.length + 2;
+				var end = location.search.indexOf("&", start) - 1;
+				if (end < 0)
+					end = location.search.length;
+				var result = '';
+				for (var i = start; i <= end; i++) {
+					var c = location.search.charAt(i);
+					result = result + (c == '+' ? ' ' : c);
+				}
+				return unescape(result);
+			}
+		</script>
+</head>
+<body>
+		<form class="pages" action="cosine.html">
+              <input name="s1" type="hidden" id="s1">
+        					<input name="s2" type="hidden" id="s2">
+        					<input name="s3" type="hidden" id="s3">
+        		<script>
+        		var queryString=GetParam("s1");
+        		var queryString2=GetParam("optionsRadios1");
+        		var queryString3=GetParam("optionsRadios2");
+
+        		document.getElementById('s1').value=queryString;
+        		document.getElementById('s2').value=queryString2;
+        		document.getElementById('s3').value=queryString3;
+        		</script>
+			<div class="header">
+				Question 3
+			</div>
+      <div class="pagegrid grid-pad">
+        <div class="col-1-1">
+          <p>
+            As per the latest twitter news, complete the article snippet given by
+  				<br>
+  				selecting apprpriate choices for the blanks.
+          </p>
+        </div>
+<br><br>
+        <div class="grid grid-pad">
+    <div class="col-8-12">
+         <div class="grid">
+           <div class="col-1-2">
+         <label>
+         <input  type="radio" name="optionsRadios1" id="optionsRadios1" value="650"  onclick="fillIt()">
+         Option 1 Blank 1: $650 </label>
+           </div>
+           <div class="col-1-2">
+             <label>
+         <input  type="radio" name="optionsRadios2" id="optionsRadios4" value="Twitter" onclick="fillIt2()">
+         Option 1 Blank 2: Twitter</label>
+           </div>
+         </div>
+         <br>
+         <br>
+         <div class="grid">
+           <div class="col-1-2">
+             <label>
+         <input type="radio" name="optionsRadios1" id="optionsRadios2" value="550"onclick="fillIt()">
+         Option 2 Blank 1: $550 </label>
+           </div>
+           <div class="col-1-2">
+             <label>
+         <input  type="radio" name="optionsRadios2" id="optionsRadios5" value="Google"  onclick="fillIt2()">
+         Option 2 Blank 2: Google </label>
+           </div>
+         </div>
+         <br><br>
+         <div class="grid">
+           <div class="col-1-2">
+             <label>
+         <input  type="radio" name="optionsRadios1" id="optionsRadios3" value="650" onclick="fillIt()">
+         Option 3 Blank 1: $650</label>
+           </div>
+           <div class="col-1-2">
+             <label>
+         <input  type="radio" name="optionsRadios2" id="optionsRadios6" value="Facebook" onclick="fillIt2()" >
+         Option 3 Blank 2: Facebook </label>
+           </div>
+         </div>
+    </div>
+    <div class="col-4-12">
+      <div>
+       Twitter wants more cash. The Company announced
+       <br>
+       $
+     <span id="fill1">____</span>
+
+       milliony debt offerings in a filing today, each with a potential 100$ increase provided that the sales are oversubscribed. Assuming full tip,including the $100 million boosters <span id="fill2">____</span> will raise up to %1.5 billion with the two offerings.
+     </div>
+    </div>
+</div>
+
+      </div>
+      <br>
+    <div class="col-1-1">
+      <div class="col-3-12 grid-pad">
+      				<button  type="submit" class="btn">
+      					Sumbit & Next question
+      				</button>
+      			</div>
+		</form>
+    <div class="col-3-12 grid-pad">
+        <button  type="submit" class="btn" onclick="clearRadio();">
+          Cancel and Clear Selection
+        </button>
+    </div>
+  </div>
+  <script>
+  function clearRadio() {
+
+      var radios = document.getElementsByName("optionsRadios");
+      var check;
+      for (var i = 0, length = radios.length; i < length; i++) {
+        if (radios[i].checked) {
+          radios[i].checked = false;
+        }
+      }
+    }
+  </script>
+  <script type="text/javascript">
+			function fillIt() {
+				var radios = document.getElementsByName("optionsRadios1");
+				var check;
+				for (var i = 0, length = radios.length; i < length; i++) {
+					if (radios[i].checked) {
+						if (radios[i].value) {
+							check = radios[i].value;
+						} else {
+							check = radios[i].value;
+						}
+						break;
+					}
+				}
+				document.getElementById("fill1").innerHTML = check;
+			}
+
+			function fillIt2() {
+				var radios2 = document.getElementsByName("optionsRadios2");
+				var check;
+				for (var i = 0, length = radios2.length; i < length; i++) {
+					if (radios2[i].checked) {
+						if (radios2[i].value) {
+							check = radios2[i].value;
+						} else {
+							check = radios2[i].value;
+						}
+						break;
+					}
+				}
+				document.getElementById("fill2").innerHTML = check;
+			}
+
+			function clearRadio() {
+
+				var radios = document.getElementsByName("optionsRadios1");
+				var radios2=document.getElementsByName("optionsRadios2");
+				var check;
+				for (var i = 0, length = radios.length; i < length; i++) {
+					if (radios[i].checked) {
+						radios[i].checked = false;
+					}
+				}
+				for (var i = 0, length = radios2.length; i < length; i++) {
+					if (radios2[i].checked) {
+						radios2[i].checked = false;
+					}
+				}
+				document.getElementById("fill1").innerHTML = "_____";
+				document.getElementById("fill2").innerHTML = "_____";
+			}
+
+			function clickIt() {
+				location.href = "Video.html";
+			}
+
+		</script>
+
+	</body>
+</html>
