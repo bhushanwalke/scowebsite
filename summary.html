@@ -1,0 +1,159 @@
+<html>
+<head>
+  <title>
+    CMPE280
+  </title>
+  <link rel="stylesheet" type="text/css" href="static/site.css">
+
+  <!-- <script type="text/javascript" src="static/site.js"></script> -->
+  <script type="text/javascript" >
+			function GetParam(name) {
+
+				var start = location.search.indexOf("?" + name + "=");
+				if (start < 0)
+					start = location.search.indexOf("&" + name + "=");
+				if (start < 0)
+					return '';
+				start += name.length + 2;
+				var end = location.search.indexOf("&", start) - 1;
+				if (end < 0)
+					end = location.search.length;
+				var result = '';
+				for (var i = start; i <= end; i++) {
+					var c = location.search.charAt(i);
+					result = result + (c == '+' ? ' ' : c);
+				}
+				return unescape(result);
+			}
+
+			var ans1 = 0;
+			var ans2 = 0;
+			var ans3 = 0;
+			var ans4=0;
+			var ans5=0;
+			var score1 = 0;
+			var score2 = 0;
+			var score3 = 0;
+			var score4 = 0;
+			var qs = GetParam("q1");
+			var qs2 = GetParam("q2");
+			var qs31 = GetParam("q31");
+      var qs32 = GetParam("q32");
+			var qs4 = GetParam("q4");
+			if (qs == "option4") {
+
+				ans1=ans1+2;
+				score1 = 100;
+			} else {
+
+				ans = 0;
+			}
+			if (qs2 == "option1") {
+
+				ans1++;
+				score1 =40;
+			} else {
+
+				ans = 0;
+			}
+			if (qs31 == "option2" && qs32 == "option1") {
+
+				ans1++;
+				score1 = 80;
+			} else {
+
+				ans = 0;
+			}
+			if (qs4 == "option1") {
+
+				ans1++;
+				score1 =100 ;
+			} else {
+
+				ans = 0;
+			}
+
+		</script>
+</head>
+<body>
+		<form class="pages" action="index.html">
+			<div class="header">
+				Score Card
+			</div>
+      <div class="pagegrid grid-pad">
+        <div class="col-1-1" style="border:2px solid #000; margin-left:-10px; border-radius:4px">
+          <div style="padding-left:10px">
+          <p>Section Score</p>
+
+          <details>
+						<summary>
+							Quantitative Section
+						</summary>
+						<p>
+							Number of correct Answers:<script>
+								document.write(ans1);
+							</script>
+						</p>
+						<p>
+							Score:
+							<script>
+								document.write(score1);
+							</script>
+
+					</details>
+
+          <br>
+
+					<details>
+						<summary>
+							Reading Section
+						</summary>
+						<p>
+							Score:
+							<script>
+								document.write(ans1);
+							</script>
+					</details>
+          <br>
+					<details>
+						<summary>
+							Audio Video Section
+						</summary>
+						<p>
+							Score:
+							<script>
+								document.write(ans1);
+							</script>
+
+					</details>
+          <br>
+        </div>
+        </div>
+        </div>
+
+
+
+        <div class="col-1-1" style="text-align: center;">
+          <p>Thank You!</p>
+          				<button  type="submit" class="btn">
+          					Finish
+          				</button>
+          			</div>
+
+      <br>
+		</form>
+  </div>
+  <script>
+  function clearRadio() {
+
+      var radios = document.getElementsByName("optionsRadios");
+      var check;
+      for (var i = 0, length = radios.length; i < length; i++) {
+        if (radios[i].checked) {
+          radios[i].checked = false;
+        }
+      }
+    }
+  </script>
+	</body>
+</html>

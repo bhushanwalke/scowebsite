@@ -7,23 +7,34 @@
   <script src="http://fred-wang.github.io/mathjax.js/mpadded-min.js"></script>
 
   <!-- <script type="text/javascript" src="static/site.js"></script> -->
+  <script type="text/javascript" >
+			function GetParam(name) {
+
+				var start = location.search.indexOf("?" + name + "=");
+				if (start < 0)
+					start = location.search.indexOf("&" + name + "=");
+				if (start < 0)
+					return '';
+				start += name.length + 2;
+				var end = location.search.indexOf("&", start) - 1;
+				if (end < 0)
+					end = location.search.length;
+				var result = '';
+				for (var i = start; i <= end; i++) {
+					var c = location.search.charAt(i);
+					result = result + (c == '+' ? ' ' : c);
+				}
+				return unescape(result);
+			}
+		</script>
 </head>
 <body>
 		<form class="pages" action="survey.html">
-      <input name="s1" type="hidden" id="s1">
-					<input name="s2" type="hidden" id="s2">
-					<input name="s3" type="hidden" id="s3">
-					<input name="s4" type="hidden" id="s4">
+					<input name="q4" type="hidden" id="q4">
 		<script>
-		var queryString=GetParam("s1");
-		var queryString2=GetParam("s2");
-		var queryString3=GetParam("s3");
-		var queryString4=GetParam("optionsRadios");
+		var queryString=GetParam("videoRadios");
 
-		document.getElementById('s1').value=queryString;
-		document.getElementById('s2').value=queryString2;
-		document.getElementById('s3').value=queryString3;
-		document.getElementById('s4').value=queryString4;
+		document.getElementById('q4').value=queryString;
 		</script>
 			<div class="header">
 				Question 4
@@ -45,12 +56,12 @@
                <div class="grid">
                  <div class="col-1-2">
                    <label>
-					<input  type="radio" name="optionsRadios" id="optionsRadios1" value="option1" >
+					<input  type="radio" name="videoRadios" id="videoRadios" value="option1" >
 					NASA.Gov </label>
                  </div>
                  <div class="col-1-2">
                    <label>
-					<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+					<input type="radio" name="videoRadios" id="videoRadios" value="option2">
 					Data.Gov</label>
                  </div>
                </div>
@@ -61,12 +72,12 @@
                <div class="grid">
                  <div class="col-1-2">
                    <label>
- 					<input  type="radio" name="optionsRadios" id="optionsRadios3" value="option3" >
+ 					<input  type="radio" name="videoRadios" id="videoRadios" value="option3" >
  					Facebook </label>
                  </div>
                  <div class="col-1-2">
                    <label>
-					<input  type="radio" name="optionsRadios" id="optionsRadios4" value="option4">
+					<input  type="radio" name="videoRadios" id="videoRadios" value="option4">
 					XYZ.net </label>
                  </div>
                </div>
@@ -93,7 +104,7 @@
   <script>
   function clearRadio() {
 
-      var radios = document.getElementsByName("optionsRadios");
+      var radios = document.getElementsByName("videoRadios");
       var check;
       for (var i = 0, length = radios.length; i < length; i++) {
         if (radios[i].checked) {

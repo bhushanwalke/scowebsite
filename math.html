@@ -7,9 +7,36 @@
   <script src="http://fred-wang.github.io/mathjax.js/mpadded-min.js"></script>
 
   <!-- <script type="text/javascript" src="static/site.js"></script> -->
+  <script type="text/javascript" >
+			function GetParam(name) {
+
+				var start = location.search.indexOf("?" + name + "=");
+				if (start < 0)
+					start = location.search.indexOf("&" + name + "=");
+				if (start < 0)
+					return '';
+				start += name.length + 2;
+				var end = location.search.indexOf("&", start) - 1;
+				if (end < 0)
+					end = location.search.length;
+				var result = '';
+				for (var i = start; i <= end; i++) {
+					var c = location.search.charAt(i);
+					result = result + (c == '+' ? ' ' : c);
+				}
+				return unescape(result);
+			}
+		</script>
+
 </head>
 <body>
 		<form class="pages" action="cosine.html">
+      <input name="q1" type="hidden" id="q1">
+  			<script>
+  				var queryString = GetParam("mathop");
+
+  				document.getElementById('q1').value = queryString;
+  			</script>
 			<div class="header">
 				Question 1
 			</div>
@@ -29,7 +56,7 @@
             <br>
                <div class="grid">
                  <div class="col-1-2">
-                   <input type="radio" name="options" value="option1">
+                   <input type="radio" name="mathop" value="option1">
                     <math>
                       <mrow>
                         <mi>y</mi>
@@ -42,7 +69,7 @@
                     </math>
                  </div>
                  <div class="col-1-2">
-                   <input type="radio" name="options" value="option2">
+                   <input type="radio" name="mathop" value="option2">
                          <math>
                            <mrow>
                           	<msup>
@@ -89,7 +116,7 @@
                <br>
                <div class="grid">
                  <div class="col-1-2">
-                   <input type="radio" name="options" value="option3">
+                   <input type="radio" name="mathop" value="option3">
                    <math>
                      <mrow>
                        <mrow>
@@ -118,7 +145,7 @@
         					</math>
                  </div>
                  <div class="col-1-2">
-                   <input type="radio" name="options" value="option4">
+                   <input type="radio" name="mathop" value="option4">
                    <math>
                      <mrow>
 
