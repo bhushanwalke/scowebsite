@@ -1,0 +1,219 @@
+<html>
+<head>
+  <title>
+    CMPE280
+  </title>
+  <link rel="stylesheet" type="text/css" href="static/site.css">
+  <script src="http://fred-wang.github.io/mathjax.js/mpadded-min.js"></script>
+
+  <!-- <script type="text/javascript" src="static/site.js"></script> -->
+</head>
+<body>
+		<form class="pages" action="cosine.html">
+			<div class="header">
+				Question 1
+			</div>
+      <div class="pagegrid grid-pad">
+        <div class="col-1-1">
+          <p>Given points (x1,y1) and (x2,y2) select the formula to find the equation of
+  				<br/>
+  				the given line.</p>
+        </div>
+      </div>
+      <br>
+
+            <div class="grid grid-pad">
+          <div class="col-7-12">
+            <br>
+            <br>
+            <br>
+               <div class="grid">
+                 <div class="col-1-2">
+                   <input type="radio" name="options" value="option1">
+                    <math>
+                      <mrow>
+                        <mi>y</mi>
+                        <mo>=</mo>
+                        <mi>m</mi>
+                        <mi>x</mi>
+                        <mo>+</mo>
+                        <mi>b</mi>
+                      </mrow>
+                    </math>
+                 </div>
+                 <div class="col-1-2">
+                   <input type="radio" name="options" value="option2">
+                         <math>
+                           <mrow>
+                          	<msup>
+                          		<mrow>
+                            		<mo>(</mo>
+                                <mi>x</mi>
+                                <mo>-</mo>
+                                <mi>h</mi>
+                                <mo>)</mo>
+                          		</mrow>
+                          		<mrow>
+                          		    <mn>2</mn>
+                          		</mrow>
+                          	</msup>
+                          	<mo>+</mo>
+                          	<msup>
+                          		<mrow>
+                                <mo>(</mo>
+                                <mi>y</mi>
+                                <mo>-</mo>
+                                <mi>k</mi>
+                                <mo>)</mo>
+                          		</mrow>
+                          		<mrow>
+                          		<mn>2</mn>
+                          		</mrow>
+                          	</msup>
+                            <mo>=</mo>
+                            <msup>
+                              <mrow>
+                                <mi>r</mi>
+                              </mrow>
+                              <mrow>
+                                  <mn>2</mn>
+                              </mrow>
+                            </msup>
+                          	</mrow>
+                         </math>
+                 </div>
+               </div>
+               <br>
+               <br>
+               <br>
+               <br>
+               <div class="grid">
+                 <div class="col-1-2">
+                   <input type="radio" name="options" value="option3">
+                   <math>
+                     <mrow>
+                       <mrow>
+                     <mi>y</mi>
+                     <mo>-</mi>
+                     </mrow>
+        						<msub>
+                      <mrow>
+        							<mi>y</mi>
+                      </mrow>
+        							<mn>1</mn>
+        						</msub>
+                    <mo>=</mo>
+                    <mi>m</mi>
+                    <mo>(</mo>
+                    <mi>x</mi>
+                    <mo>-</mo>
+        						<msub>
+        							<mi>x</mi>
+        							<mn>
+        								1
+        							</mn>
+        						</msub>
+                    <mo>)</mo>
+                  </mrow>
+        					</math>
+                 </div>
+                 <div class="col-1-2">
+                   <input type="radio" name="options" value="option4">
+                   <math>
+                     <mrow>
+
+                       <mrow>
+                     <mi>y</mi>
+                     <mo>-</mi>
+                     </mrow>
+                    <msub>
+                      <mrow>
+                      <mi>y</mi>
+                      </mrow>
+                      <mn>2</mn>
+                    </msub>
+                    <mo>=</mo>
+                     <mfrac>
+                       <mrow>
+                       <msub>
+                         <mi>
+                           y
+                         </mi>
+                         <mn>2</mn>
+                       </msub>
+                       <mo>-</mo>
+                       <msub>
+                         <mi>y</mi>
+                         <mn>
+                           1
+                         </mn>
+
+                       </msub>
+                     </mrow>
+                     <mrow>
+                       <msub>
+                         <mi>
+                           x
+                         </mi>
+                         <mn>2</mn>
+                       </msub>
+                       <mo>-</mo>
+                       <msub>
+                         <mi>x</mi>
+                         <mn>
+                           1
+                         </mn>
+                       </msub>
+                     </mfrac>
+
+                     <mo>(</mo>
+                       <mi>
+                         x
+                       </mi>
+
+                     <mo>-</mo>
+                     <msub>
+                       <mi>x</mi>
+                       <mn>
+                         2
+                       </mn>
+                     </msub>
+                     <mo>)</mo>
+                     </mrow>
+                      </math>
+                 </div>
+               </div>
+          </div>
+          <div class="col-5-12">
+             <div class="content">
+                 <img src="static/diagram.png" style="width:304px;height:228px">
+             </div>
+          </div>
+      </div>
+    <div class="col-1-1">
+      <div class="col-3-12 grid-pad">
+      				<button  type="submit" class="btn">
+      					Sumbit & Next question
+      				</button>
+      			</div>
+		</form>
+    <div class="col-3-12 grid-pad">
+        <button  type="submit" class="btn" onclick="clearRadio();">
+          Cancel and Clear Selection
+        </button>
+    </div>
+  </div>
+  <script>
+  function clearRadio() {
+
+      var radios = document.getElementsByName("optionsRadios");
+      var check;
+      for (var i = 0, length = radios.length; i < length; i++) {
+        if (radios[i].checked) {
+          radios[i].checked = false;
+        }
+      }
+    }
+  </script>
+	</body>
+</html>
